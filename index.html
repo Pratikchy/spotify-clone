@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MusicMatch - Your favourite music is here</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body class="light-mode">
+    <nav>
+        <ul>
+            <li class="brand"><img src="logo1.png" alt="MusicMatch"> MusicMatch</li>
+            <li>Home</li>
+            <li>About</li>
+            <li><button id="loginBtn">Login</button></li>
+            <li><button id="signupBtn">Sign Up</button></li>
+        </ul>
+        <!-- Search bar -->
+        <input type="text" id="searchBar" placeholder="Search songs...">
+        <button id="toggleMode">Toggle Dark/Light Mode</button>
+    </nav>
+
+    <div class="container">
+        <div class="songList">
+            <h1>Best of Bollywood</h1>
+            <div class="songItemContainer">
+                <div class="songItem">
+                    <img src="covers/1.jpg" alt="1">
+                    <span class="songName">Haath Kangan Leke Aana</span>
+                    <span class="songlistplay"><span class="timestamp">05:34 <i id="0" class="far songItemPlay fa-play-circle"></i> </span></span>
+                </div>
+                <div class="songItem">
+                    <img src="covers/2.jpg" alt="2">
+                    <span class="songName">Heeriye</span>
+                    <span class="songlistplay"><span class="timestamp">05:36 <i id="1" class="far songItemPlay fa-play-circle"></i> </span></span>
+                </div>
+                <div class="songItem">
+                    <img src="covers/3.jpg" alt="3">
+                    <span class="songName">O-Maahi</span>
+                    <span class="songlistplay"><span class="timestamp">05:44 <i id="2" class="far songItemPlay fa-play-circle"></i> </span></span>
+                </div>
+                <div class="songItem">
+                    <img src="covers/4.jpg" alt="4">
+                    <span class="songName">Perfect - Ed Sheeran</span>
+                    <span class="songlistplay"><span class="timestamp">05:39 <i id="3" class="far songItemPlay fa-play-circle"></i> </span></span>
+                </div>
+                <div class="songItem">
+                    <img src="covers/5.jpg" alt="5">
+                    <span class="songName">Tu Hi Hain Aashiqui</span>
+                    <span class="songlistplay"><span class="timestamp">04:24 <i id="4" class="far songItemPlay fa-play-circle"></i> </span></span>
+                </div>
+                <div class="songItem">
+                    <img src="covers/6.jpg" alt="6">
+                    <span class="songName">Ve Kamaleya Redux</span>
+                    <span class="songlistplay"><span class="timestamp">04:12 <i id="5" class="far songItemPlay fa-play-circle"></i> </span></span>
+                </div>
+                <div class="songItem">
+                    <img src="covers/7.jpg" alt="7">
+                    <span class="songName">Tum Kya Mile</span>
+                    <span class="songlistplay"><span class="timestamp">05:04 <i id="6" class="far songItemPlay fa-play-circle"></i> </span></span>
+                </div>
+                <div class="songItem">
+                    <img src="covers/8.jpg" alt="8">
+                    <span class="songName">Ya Rabba - Salam-e-Ishq</span>
+                    <span class="songlistplay"><span class="timestamp">05:18 <i id="7" class="far songItemPlay fa-play-circle"></i> </span></span>
+                </div>
+                <div class="songItem">
+                    <img src="covers/9.jpg" alt="9">
+                    <span class="songName">Ye Jism</span>
+                    <span class="songlistplay"><span class="timestamp">05:20 <i id="8" class="far songItemPlay fa-play-circle"></i> </span></span>
+                </div>
+                <div class="songItem">
+                    <img src="covers/10.jpg" alt="10">
+                    <span class="songName">Heroes Tonight</span>
+                    <span class="songlistplay"><span class="timestamp">05:34 <i id="9" class="far songItemPlay fa-play-circle"></i> </span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom">
+        <input type="range" id="volumeControl" min="0" max="100" value="50">
+        <input type="range" id="myProgressBar" min="0" max="100" value="0">
+        <div class="icons">
+            <i class="fas fa-step-backward" id="previous"></i>
+            <i class="far fa-play-circle" id="masterPlay"></i>
+            <i class="fas fa-step-forward" id="next"></i>
+        </div>
+        <div class="songInfo">
+            <img src="playing.gif" width="42px" alt="" id="gif"> 
+            <span id="masterSongName"></span>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeLogin">&times;</span>
+            <h2>Login</h2>
+            <form id="loginForm">
+                <label for="loginEmail">Email:</label>
+                <input type="email" id="loginEmail" required>
+                <label for="loginPassword">Password:</label>
+                <input type="password" id="loginPassword" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeSignup">&times;</span>
+            <h2>Sign Up</h2>
+            <form id="signupForm">
+                <label for="signupName">Name:</label>
+                <input type="text" id="signupName" required>
+                <label for="signupEmail">Email:</label>
+                <input type="email" id="signupEmail" required>
+                <label for="signupPassword">Password:</label>
+                <input type="password" id="signupPassword" required>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/26504e4a1f.js" crossorigin="anonymous"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Clone - Login/Signup</title>
+    <style>
+        /* Basic styling for the modal */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 400px;
+            border-radius: 40px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal h2 {
+            text-align: center;
+        }
+
+        .modal input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+
+        .modal button {
+            width: 100%;
+            padding: 10px;
+            background-color: #1db954;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .modal button:hover {
+            background-color: #1aa34a;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Trigger the modal on page load or click -->
+<button id="openModalBtn">Login/Signup</button>
+
+<!-- The Modal -->
+<div id="emailModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Login / Signup</h2>
+        <p>Please enter your email to proceed:</p>
+        <input type="email" id="emailInput" placeholder="Enter your email" required>
+        <button id="submitEmail">Submit</button>
+    </div>
+</div>
+
+<script>
+    // Get modal elements
+    var modal = document.getElementById('emailModal');
+    var openModalBtn = document.getElementById('openModalBtn');
+    var closeBtn = document.getElementsByClassName('close')[0];
+    var submitEmailBtn = document.getElementById('submitEmail');
+    var emailInput = document.getElementById('emailInput');
+
+    // Open modal on button click or page load
+    openModalBtn.addEventListener('click', () => {
+        modal.style.display = 'block';
+    });
+
+    // Close modal when 'x' is clicked
+    closeBtn.onclick = function() {
+        modal.style.display = 'none';
+    };
+
+    // Close modal when user clicks outside of it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    };
+
+    // Handle email submission
+    submitEmailBtn.addEventListener('click', () => {
+        const email = emailInput.value;
+        if (email) {
+            alert('Email submitted: ' + email);
+            // Here, you can handle the login/signup logic
+            modal.style.display = 'none'; // Close modal after submission
+        } else {
+            alert('Please enter a valid email');
+        }
+    });
+
+    // Auto-open the modal when the page loads
+    window.onload = function() {
+        modal.style.display = 'block';
+    };
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Clone with Dark/Light Mode</title>
+    <style>
+        /* Default light mode styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color: black;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .dark-mode {
+            background-color: #121212;
+            color: white;
+        }
+
+        /* Style the dark/light mode toggle button */
+        .theme-toggle-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #1db954;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .theme-toggle-btn:hover {
+            background-color: #1aa34a;
+        }
+
+        /* Input fields */
+        input[type="text"], input[type="email"], input[type="password"] {
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+            box-sizing: border-box;
+            border: 2px solid #1db954;
+            background-color: white;
+            color: black;
+        }
+
+        .dark-mode input[type="text"], .dark-mode input[type="email"], .dark-mode input[type="password"] {
+            background-color: #333;
+            color: white;
+            border-color: #1db954;
+        }
+
+        /* Additional styles for dark/light mode can go here */
+        .modal-content {
+            background-color: inherit;
+            color: inherit;
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- Theme toggle button -->
+<button id="themeToggleBtn" class="theme-toggle-btn">Toggle Dark/Light Mode</button>
+
+<!-- Example form for signup/login -->
+<h2>Signup/Login Form</h2>
+<form>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+    // Get the theme toggle button
+    const themeToggleBtn = document.getElementById('themeToggleBtn');
+
+    // Check if there's a saved theme preference in localStorage
+    const savedTheme = localStorage.getItem('theme');
+
+    // Apply saved theme if it exists
+    if (savedTheme) {
+        document.body.classList.toggle('dark-mode', savedTheme === 'dark');
+    }
+
+    // Toggle dark/light mode on button click
+    themeToggleBtn.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+
+        // Save the theme preference in localStorage
+        if (document.body.classList.contains('dark-mode')) {
+            localStorage.setItem('theme', 'dark');
+        } else {
+            localStorage.setItem('theme', 'light');
+        }
+    });
+</script>
+
+</body>
+</html>

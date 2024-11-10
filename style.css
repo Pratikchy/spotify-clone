@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+body {
+    background-color: antiquewhite;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Added for better box model handling */
+}
+
+nav {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    height: 65px;
+    background-color: black;
+    color: white;
+}
+
+nav ul li {
+    padding: 0 12px;
+    transition: background-color 0.3s ease; /* Hover effect */
+}
+
+nav ul li:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Slight hover effect */
+}
+
+.brand img {
+    width: 44px;
+    padding: 0 8px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 1.3rem;
+}
+
+.container {
+    min-height: 72vh;
+    background-color: black;
+    color: white;
+    font-family: 'Varela Round', sans-serif;
+    display: flex;
+    flex-direction: column; /* Adjusted to allow stacking */
+    margin: 23px auto;
+    width: 70%;
+    border-radius: 12px;
+    padding: 34px;
+    background-image: url('bg.jpg');
+    background-size: cover; /* Added for better background image handling */
+}
+
+.bottom {
+    position: sticky;
+    bottom: 0;
+    height: 130px;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.icons {
+    margin-top: 18px; 
+}
+
+.icons i {
+    cursor: pointer;
+    margin: 0 10px; /* Space between icons */
+    transition: transform 0.3s ease; /* Added for icon hover effect */
+}
+
+.icons i:hover {
+    transform: scale(1.2); /* Zoom effect on hover */
+}
+
+#myProgressBar {
+    width: 80vw; 
+    cursor: pointer;
+    height: 8px; /* Added height for progress bar */
+    background-color: grey; /* Added background color */
+    border-radius: 4px; /* Rounded edges for progress bar */
+}
+
+.songItemContainer {
+    margin-top: 74px;
+}
+
+.songItem {
+    height: 50px;
+    display: flex;
+    background-color: white;
+    color: black;
+    margin: 12px 0;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 34px;
+    transition: background-color 0.3s ease; /* Hover effect */
+}
+
+.songItem:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* Light hover effect */
+}
+
+.songItem img {
+    width: 43px;
+    margin: 0 23px;
+    border-radius: 34px;
+}
+
+.timestamp {
+    margin: 0 23px;
+}
+
+.timestamp i {
+    cursor: pointer;
+}
+
+.songInfo {
+    position: absolute;
+    left: 10vw;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.songInfo img {
+    opacity: 0;
+    transition: opacity 0.4s ease-in;
+}
+
+@media only screen and (max-width: 1100px) {
+    body {
+        background-color: red;
+    }
+
+    .container {
+        width: 90%; /* Adjust width on smaller screens */
+        padding: 20px; /* Reduce padding on smaller screens */
+    }
+
+    .songItem {
+        flex-direction: column; /* Stack items on smaller screens */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .timestamp {
+        margin: 5px 0; /* Reduce margin */
+    }
+}
+
+/* Additional styles for buttons and inputs */
+button {
+    background-color: #1db954; /* Spotify green */
+    color: rgb(2, 0, 0);
+    border: none;
+    border-radius: 35px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: 'Ubuntu', sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #1aa34a; /* Darker green on hover */
+}
+
+input[type="text"] {
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    margin-top: 20px;
+    width: calc(100% - 22px); /* Full width minus padding */
+}
+
+input[type="text"]:focus {
+    outline: none; /* Remove outline on focus */
+    border: 1px solid #1db954; /* Green border on focus */
+}
+/* Input fields for light mode */
+input[type="text"], input[type="email"], input[type="password"] {
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid #1db954;  /* Border color */
+    background-color: white;    /* Background for light mode */
+    color: black;               /* Font color for light mode */
+}
+
+/* Input fields for dark mode */
+.dark-mode input[type="text"], .dark-mode input[type="email"], .dark-mode input[type="password"] {
+    background-color: #333;     /* Background for dark mode */
+    color: white;               /* Font color for dark mode */
+    border-color: #1db954;      /* Border color for dark mode */
+}
